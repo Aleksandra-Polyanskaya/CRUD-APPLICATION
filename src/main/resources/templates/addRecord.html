@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AddRecord</title>
+</head>
+<body bgcolor="#c0c0c0">
+
+<h2 align="center">Добавить новую запись</h2>
+<div class="container mr-5 mr-10">
+<form action="#" th:action="@{/addRecord}" th:object="${record}" method="post">
+<br><br>    Имя: <input type="text" id="name" th:field="*{name}" placeholder="Введите имя"
+                        class="form-control" required minlength="2" maxlength="30">
+<br><br>    Фамилия: <input type="text" id="surname" th:field="*{surname}" placeholder="Введите фамилию"
+                           class="form-control" required minlength="2" maxlength="30">
+ <br><br>   Возраст:  <input type="text" id="age" th:field="*{age}" placeholder="Введите возраст"
+                       class="form-control" required minlength="1" maxlength="2">
+ <br><br>   Услуга: <input type="text" id="service" th:field="*{service}" placeholder="Название услуги"
+                       class="form-control" required minlength="1" maxlength="100">
+ <br><br>   Дата: <input type="text" id="date" th:field="*{date}" placeholder="Введите дату"
+                       class="form-control" required minlength="1" maxlength="11">
+ <br><br>   Время: <input type="text" id="time" th:field="*{time}" placeholder="Время"
+                       class="form-control" required minlength="2" maxlength="5">
+ <br> <br>  <button type="submit" class="btn btn-success">Добавить запись</button>
+</form>
+</div>
+</body>
+</html>

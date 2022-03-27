@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <title>All Records</title>
+</head>
+<body bgcolor="#c0c0c0">
+<h1 align="center">Все записи</h1>
+<br>
+<table height="150" align="center" cellpadding="10" cellspacing="0" border="2" width="85%">
+    <thead>
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Surname</th>
+        <th scope="col">Age</th>
+        <th scope="col">Service</th>
+        <th scope="col">Date</th>
+        <th scope="col">Time</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="records : ${records}">
+        <td th:text="${records.name}"></td>
+        <td th:text="${records.surname}"></td>
+        <td th:text="${records.age}"></td>
+        <td th:text="${records.service}"></td>
+        <td th:text="${records.date}"></td>
+        <td th:text="${records.time}"></td>
+        <td>
+            <a th:href="@{editRecord/{id}(id=${records.id})}">Изменить запись</a>
+        </td>
+        <td>
+            <a th:href="@{deleteRecord/{id}(id=${records.id})}">Удалить запись</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
